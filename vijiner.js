@@ -155,7 +155,7 @@ formDecode.addEventListener("submit", (e) => {
   const resultText = resultArray.join("");
   const defaultText = document.createElement("p");
   defaultText.textContent = resultText;
-  defaultText.classList = "fs-3 fw-bolder";
+  defaultText.classList = "fs-3 fw-bolder bg-success";
   DefaultTextResult.insertAdjacentElement("beforeend", defaultText);
 });
 
