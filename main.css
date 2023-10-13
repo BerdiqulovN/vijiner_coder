@@ -3,6 +3,21 @@
     padding: 0;
 }
 
+body{
+    background-image: url("/images/encryption.jpeg");
+    background-size: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
 th{
     background-color: aqua !important;
+}
+
+.update{
+    position: absolute ;
+    top: 90px ;
+    right: 100px;
 }
