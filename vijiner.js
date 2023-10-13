@@ -158,3 +158,24 @@ formDecode.addEventListener("submit", (e) => {
   defaultText.classList = "fs-3 fw-bolder";
   DefaultTextResult.insertAdjacentElement("beforeend", defaultText);
 });
+
+// ------------------------------decode function
+
+formDecode.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const decodeText = e.target.text.value.toUpperCase();
+  let count = 0;
+  let resultArray = [];
+  for (const letter of decodeText) {
+    let letterIndex = -1;
+    for (const item of arr[count][1]) {
+      if (item == letter) {
+        letterIndex = arr[count][1].indexOf(item);
+        resultArray.push(array[letterIndex]);
+      }
+    }
+    count++;
+    if (count == keyText.length) count = 0;
+  }
+  console.log(resultArray);
+});
