@@ -25,16 +25,78 @@ const array = [
   "X",
   "Y",
   "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
   ",",
   " ",
   ".",
   "!",
   "?",
   "'",
+  "`",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "_",
+  "-",
+  "=",
+  "+",
+  "/",
+  ";",
+  ">",
+  "<",
+  ":",
+  '"',
+  "}",
+  "{",
+  "[",
+  "]",
+  "",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
 ];
 
 const formEl = document.querySelector(".form-el");
 const formText = document.querySelector(".form-text");
+const tableWrapper = document.querySelector(".table-wrapper")
 const formDecode = document.querySelector(".form-decode");
 const tableHead = document.querySelector(".table-head");
 const tableBody = document.querySelector(".table-body");
@@ -61,6 +123,9 @@ function findCodeArr(key) {
 
 // ----------------------------------------------------------------
 const tableUIFn = (arr, array) => {
+  tableWrapper.classList.replace("d-none", "d-block");
+
+
   const tableRow = document.createElement("tr");
   tableRow.insertAdjacentHTML("afterbegin", `<th> </th>`);
 
@@ -90,7 +155,9 @@ const tableUIFn = (arr, array) => {
 let keyText = 0;
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
-  const key = e.target.key.value.toUpperCase();
+  // const key = e.target.key.value.toUpperCase();
+  const key = e.target.key.value;
+
   keyText = key;
 
   if (key.length) {
@@ -103,7 +170,9 @@ formEl.addEventListener("submit", (e) => {
 
 formText.addEventListener("submit", (e) => {
   e.preventDefault();
-  const text = e.target.text.value.toUpperCase();
+  // const text = e.target.text.value.toUpperCase();
+  const text = e.target.text.value;
+
   let count = 0;
   let resultArr = [];
   for (const item of text) {
@@ -135,7 +204,9 @@ formText.addEventListener("submit", (e) => {
 
 formDecode.addEventListener("submit", (e) => {
   e.preventDefault();
-  const decodeText = e.target.text.value.toUpperCase();
+  // const decodeText = e.target.text.value.toUpperCase();
+  const decodeText = e.target.text.value;
+
   let count = 0;
   let resultArray = [];
   for (const letter of decodeText) {
@@ -161,21 +232,23 @@ formDecode.addEventListener("submit", (e) => {
 
 // ------------------------------decode function
 
-formDecode.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const decodeText = e.target.text.value.toUpperCase();
-  let count = 0;
-  let resultArray = [];
-  for (const letter of decodeText) {
-    let letterIndex = -1;
-    for (const item of arr[count][1]) {
-      if (item == letter) {
-        letterIndex = arr[count][1].indexOf(item);
-        resultArray.push(array[letterIndex]);
-      }
-    }
-    count++;
-    if (count == keyText.length) count = 0;
-  }
-  console.log(resultArray);
-});
+// formDecode.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   // const decodeText = e.target.text.value.toUpperCase();
+//   const decodeText = e.target.text.value;
+
+//   let count = 0;
+//   let resultArray = [];
+//   for (const letter of decodeText) {
+//     let letterIndex = -1;
+//     for (const item of arr[count][1]) {
+//       if (item == letter) {
+//         letterIndex = arr[count][1].indexOf(item);
+//         resultArray.push(array[letterIndex]);
+//       }
+//     }
+//     count++;
+//     if (count == keyText.length) count = 0;
+//   }
+//   console.log(resultArray);
+// });
